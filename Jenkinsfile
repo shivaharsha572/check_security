@@ -1,31 +1,21 @@
 pipeline {
-  environment {
-    //This variable need be tested as string
-    doError = ‘0’
-  }
-  agent any
-  stages {
-    stage(‘Error’) {
-      when {
-        expression { doError == ‘1’ }
-      }
-      steps {
-        echo “Failure”
-        error “failure test. It’s work”
-      }
-    }
-    stage(‘Success’) {
-      when {
-        expression { doError == ‘0’ }
-      }
-      steps {
-        echo “ok”
-      }
-    }
-  }
-  post {
-    always {
-      echo ‘I will always execute this’
-    }
-  }
+         agent any
+         stages {
+                 stage('One') {
+                 steps {
+                     echo 'Hi, welcome to pipeline demo...'
+                 }
+                 }
+                 stage('Two') {
+                 steps {
+                    echo('Sample testing of Stage 2')
+                 }
+                 }
+                 stage('Three') {
+
+                 steps {
+                       echo 'Thanks for using Jenkins Pipeline'
+                 }
+                 }
+              }
 }
