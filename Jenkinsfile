@@ -14,7 +14,7 @@ pipeline {
                  stage('Three') {
 
                  steps {
-                       echo 'Thanks for using Jenkins Pipeline I updated with polling'
+                       echo 'Thanks'
                  }
                  }
               }
